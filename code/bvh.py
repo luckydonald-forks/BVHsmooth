@@ -40,8 +40,8 @@ def read_file(input):
         i += 1
 
     # get some time parameters
-    fn = int(data[i+1].split(' ')[1]) # FRAME NUMBER - number of frames
-    ft = float(data[i+2].split(' ')[2]) # FRAME TIME - duration of each frame in seconds
+    fn = int(data[i+1].split()[1]) # FRAME NUMBER - number of frames
+    ft = float(data[i+2].split()[2]) # FRAME TIME - duration of each frame in seconds
     d = fn*ft # duration in seconds is equal the number of frame times the duration of each frame in seconds
     fps = 1/ft # FRAME RATE
    
@@ -53,7 +53,7 @@ def read_file(input):
     k = 0
     n = len(data)
     while(i < n):
-        line = np.array(data[i].split(" "))[0:nj*3 + 3]
+        line = np.array(data[i].split())[0:nj*3 + 3]
         v[k] = line.astype(np.float)
         i += 1
         k += 1
