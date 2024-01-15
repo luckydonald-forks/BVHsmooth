@@ -54,7 +54,7 @@ def read_file(input):
     n = len(data)
     while(i < n):
         line = np.array(data[i].split())[0:nj*3 + 3]
-        v[k] = line.astype(np.float)
+        v[k] = line.astype(float)
         i += 1
         k += 1
     
